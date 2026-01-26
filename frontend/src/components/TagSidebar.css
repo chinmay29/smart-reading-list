@@ -1,0 +1,95 @@
+.tag-sidebar {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+}
+
+.tag-sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.tag-sidebar-header h3 {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.clear-tags {
+    background: none;
+    border: none;
+    color: var(--accent-secondary);
+    font-size: var(--font-size-xs);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.clear-tags:hover {
+    color: var(--accent-primary);
+}
+
+.no-tags {
+    color: var(--text-muted);
+    font-size: var(--font-size-sm);
+    font-style: italic;
+}
+
+.tag-list {
+    list-style: none;
+}
+
+.tag-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.tag-item:hover {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.tag-item.selected {
+    background: var(--accent-primary);
+    color: white;
+}
+
+.tag-item.selected .tag-count {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.tag-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tag-count {
+    flex-shrink: 0;
+    min-width: 24px;
+    height: 20px;
+    padding: 0 6px;
+    background: var(--bg-tertiary);
+    border-radius: 10px;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+}

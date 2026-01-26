@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Smart Reading List",
+  "version": "1.0.0",
+  "description": "Save articles with AI-powered summaries and semantic search",
+  
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  
+  "host_permissions": [
+    "http://localhost:8000/*"
+  ],
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Save to Reading List"
+  },
+  
+  "background": {
+    "service_worker": "background/background.js"
+  }
+}

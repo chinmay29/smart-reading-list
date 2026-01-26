@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Reading List</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Save Article</h1>
+    </header>
+    
+    <div id="status" class="status hidden"></div>
+    
+    <div id="article-info" class="article-info">
+      <p class="title" id="article-title">Loading...</p>
+      <p class="url" id="article-url"></p>
+    </div>
+    
+    <div class="form-group">
+      <label for="tags">Tags (comma separated)</label>
+      <input type="text" id="tags" placeholder="e.g., ml, python, research">
+    </div>
+    
+    <div class="actions">
+      <button id="save-btn" class="btn btn-primary">
+        <span class="btn-text">Save Article</span>
+        <span class="btn-loading hidden">Saving...</span>
+      </button>
+    </div>
+    
+    <footer>
+      <a href="http://localhost:5173" target="_blank" id="open-app">Open Reading List →</a>
+    </footer>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

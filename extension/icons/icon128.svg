@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c5ce7"/>
+      <stop offset="100%" style="stop-color:#a29bfe"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="24" fill="url(#bg)"/>
+  <g fill="#fff">
+    <!-- Book -->
+    <path d="M32 85V43c0-3 2-5 5-5h54c3 0 5 2 5 5v42c0 3-2 5-5 5H37c-3 0-5-2-5-5z" opacity="0.9"/>
+    <path d="M64 38v52M38 48h20M70 48h20M38 60h20M70 60h20M38 72h15M70 72h15" stroke="#6c5ce7" stroke-width="3" stroke-linecap="round" fill="none"/>
+    <!-- Sparkle/AI indicator -->
+    <circle cx="98" cy="30" r="12" fill="#ffd32a"/>
+    <path d="M98 22v16M90 30h16" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+</svg>
