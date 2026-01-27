@@ -11,12 +11,9 @@ httpx>=0.26.0
 # Database
 aiosqlite>=0.19.0
 
-# Vector store - use chromadb-client for lighter install
-chromadb>=0.4.22
+# Vector store
+chromadb>=1.0.0
 
 # HTML parsing
 trafilatura>=1.6.0
 readability-lxml>=0.8.1
-
-# For ONNX runtime (required by chromadb)
-onnxruntime>=1.14.1
