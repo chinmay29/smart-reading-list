@@ -17,3 +17,7 @@ chromadb>=1.0.0
 # HTML parsing
 trafilatura>=1.6.0
 readability-lxml>=0.8.1
+
+# YouTube transcript extraction
+youtube-transcript-api>=0.6.0
+
