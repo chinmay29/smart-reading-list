@@ -17,6 +17,7 @@ class StorageService:
     
     async def initialize(self):
         """Initialize database and create tables."""
+        print(f"📦 SQLite connecting to: {self.db_path}")
         self._db = await aiosqlite.connect(str(self.db_path))
         self._db.row_factory = aiosqlite.Row
         

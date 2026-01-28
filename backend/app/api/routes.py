@@ -209,11 +209,35 @@ async def health_check():
     """Check service health including Ollama connectivity."""
     llm = get_llm_service()
     vector = get_vector_service()
+    storage = await get_storage_service()
     
     ollama_available = await llm.is_available()
+    _, sqlite_count = await storage.list_documents(limit=1, offset=0)
     
     return {
         "status": "healthy",
         "ollama": "connected" if ollama_available else "unavailable",
+        "sqlite_count": sqlite_count,
         "vector_store_count": vector.get_count(),
+    }
+
+
+@router.post("/sync")
+async def sync_data():
+    """
+    Manually synchronize ChromaDB with SQLite.
+    
+    Use this if documents are missing from search or after a restart.
+    """
+    from ..services import sync_vector_store, cleanup_orphaned_vectors
+    
+    # First cleanup orphaned vectors
+    cleanup_result = await cleanup_orphaned_vectors()
+    
+    # Then sync missing documents
+    sync_result = await sync_vector_store()
+    
+    return {
+        "sync": sync_result,
+        "cleanup": cleanup_result,
     }

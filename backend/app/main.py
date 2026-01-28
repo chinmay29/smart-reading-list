@@ -13,10 +13,18 @@ async def lifespan(app: FastAPI):
     """Application lifespan events."""
     # Startup
     print(f"🚀 Starting {settings.app_name}")
+    print(f"📁 Data directory: {settings.data_dir}")
     
     # Initialize services
     await get_storage_service()
     get_vector_service()
+    
+    # Auto-sync ChromaDB with SQLite to ensure consistency
+    from .services import sync_vector_store
+    sync_result = await sync_vector_store()
+    if sync_result.get("added", 0) > 0:
+        print(f"🔄 Synced {sync_result['added']} documents to vector store")
+    print(f"📊 Vector store: {sync_result.get('vector_count', 0)} documents indexed")
     
     # Check Ollama
     llm = get_llm_service()
